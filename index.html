@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <aside class="aside-container">
+      <div class="logo">
+        <h1><i class="fa-brands fa-blogger-b fa-xl"></i> Dashboard</h1>
+      </div>
+      <div class="menu-container">
+        <ul class="menu">
+          <li><i class="fa-sharp fa-solid fa-house"></i> Home</li>
+          <li><i class="fa-solid fa-user"></i> Profile</li>
+          <li><i class="fa-solid fa-message"></i> Messages</li>
+          <li><i class="fa-sharp fa-solid fa-clock"></i> History</li>
+          <li><i class="fa-solid fa-file-circle-check"></i> Tasks</li>
+          <li><i class="fa-solid fa-user-group"></i> Communities</li>
+        </ul>
+      </div>
+      <div class="tools-container">
+        <ul class="tools">
+          <li><i class="fa-solid fa-gear"></i> Settings</li>
+          <li><i class="fa-solid fa-question"></i> Support</li>
+          <li><i class="fa-solid fa-user-shield"></i> Privacy</li>
+        </ul>
+      </div>
+    </aside>
+    <header>
+      <div class="header-container">
+        <div class="input-container">
+          <div class="search-container">   
+          <i class="fas fa-search"></i> <input class="search" type="text" placeholder=" Search..." />
+          </div>
+          <div class="bell">
+          <i class="fas fa-bell"></i><span class="little-avatar"><img src="data:image/jpeg;base64,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" alt=""></span><p>Manuel Gomez</p>
+          </div>
+        
+        </div>
+        <div class="utilities-container">
+          <div class="avatar-container">
+            <span class="avatar">
+              <img src="data:image/jpeg;base64,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" alt="">
+            </span>
+            </div>
+            <div class="info">
+            <p>
+              Hi there,
+              <h1>Manuel Gomez(@ManuelGomez)</h1>
+            </p>
+            </div>
+            <div class="share-container">
+            <button>New</button>
+            <button>Upload</button>
+            <button>Share</button>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+    </header>
+    
+    <main>
+
+      <div class="left-container">
+          <div class="project">
+            <h3>Your Projects</h3>
+           </div>
+           <div class="announcement">
+               <h3>Announcements</h3>
+            </div>
+      </div>
+        <di class="main-container">   
+        <div class="card-container">
+           
+            <div class="card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat, deleniti nesciunt velit impedit voluptatum a eveniet et recusandae quasi deserunt</p>
+               <div class="bottom-icons">
+                <p class="icons"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-eye"></i> <i class="fa-solid fa-share-nodes"></i> </p>
+               </div>
+               
+            </div>
+             <div class="card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat, deleniti nesciunt velit impedit voluptatum a eveniet et recusandae quasi deserunt</p>
+               <div class="bottom-icons">
+                <p class="icons"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-eye"></i> <i class="fa-solid fa-share-nodes"></i> </p>
+               </div>
+               
+            </div>
+             <div class="card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat, deleniti nesciunt velit impedit voluptatum a eveniet et recusandae quasi deserunt</p>
+               <div class="bottom-icons">
+                <p class="icons"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-eye"></i> <i class="fa-solid fa-share-nodes"></i> </p>
+               </div>
+               
+            </div>
+             <div class="card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat, deleniti nesciunt velit impedit voluptatum a eveniet et recusandae quasi deserunt</p>
+               <div class="bottom-icons">
+                <p class="icons"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-eye"></i> <i class="fa-solid fa-share-nodes"></i> </p>
+               </div>
+               
+            </div>
+             <div class="card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat, deleniti nesciunt velit impedit voluptatum a eveniet et recusandae quasi deserunt</p>
+               <div class="bottom-icons">
+                <p class="icons"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-eye"></i> <i class="fa-solid fa-share-nodes"></i> </p>
+               </div>
+               
+            </div>
+             <div class="card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat, deleniti nesciunt velit impedit voluptatum a eveniet et recusandae quasi deserunt</p>
+               <div class="bottom-icons">
+                <p class="icons"> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-eye"></i> <i class="fa-solid fa-share-nodes"></i> </p>
+               </div>
+               
+            </div>
+            
+            
+        </div>
+        <div class="right-side-container">
+            
+            <div class= "side-card">
+              <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat</p>
+               <hr>
+               <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat</p>
+               <hr>
+               <h4>Super Cool Project</h4>
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis modi possimus adipisci placeat</p>
+                
+            </div>
+            <div class= "side-card">
+                <div class="members">
+                  <div class="avatar-members">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                  </div>
+                  <div class="info-members">
+                    <p>@Tom Holland</p>
+                    <p>The Spider Man</p>
+                  </div>
+            </div>
+            <div class="members">
+                  <div class="avatar-members">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                  </div>
+                  <div class="info-members">
+                    <p>@Tom Holland</p>
+                    <p>The Spider Man</p>
+                  </div>
+            </div>
+            <div class="members">
+                  <div class="avatar-members">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                  </div>
+                  <div class="info-members">
+                    <p>@Tom Holland</p>
+                    <p>The Spider Man</p>
+                  </div>
+            </div>
+            <div class="members">
+                  <div class="avatar-members">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                  </div>
+                  <div class="info-members">
+                    <p>@Tom Holland</p>
+                    <p>The Spider Man</p>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>
+
